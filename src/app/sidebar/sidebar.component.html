@@ -1,0 +1,10 @@
+<div class="sidebar bg-dark">
+    <ul class="navbar-nav ml-2 mr-auto">
+        <li *ngFor="let conf of config" class="nav-item" routerLinkActive="active">
+            <a class="nav-link text-light d-flex" routerLink="conf.link">
+                <span class="material-icons mr-1">{{conf.icon}}</span>
+                <span class="item-label">{{conf.label}}</span>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,28 @@
+@import "../../styles.scss";
+
+.sidebar{
+  margin-left: 0;     
+  position: fixed;
+  z-index: map-get($z-index, sidebar);
+  width: 50px;
+  height: calc(100vh - 60px);     
+  flex-direction: column;
+  padding: 0;
+  color: #fff;
+  transition: margin-left .25s, margin-right .25s, width .25s, flex .25s, -ms-flex .25s;
+
+  @media (min-width: map-get($grid-breakpoints, lg)) {
+    width: 200px;
+  }
+
+  &:hover{
+    width: 200px;
+  }
+}
+
+.item-label{
+    display: none;
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+        display: inline;
+    }    
+}
