@@ -17,12 +17,15 @@
 
   &:hover{
     width: 200px;
+    .item-label{
+      display: inline;
+    } 
   }
 }
 
 .item-label{
-    display: none;
-    @media (min-width: map-get($grid-breakpoints, lg)) {
-        display: inline;
-    }    
+  display: none;
+  @media (min-width: map-get($grid-breakpoints, lg)) {
+      display: inline;
+  }    
 }
