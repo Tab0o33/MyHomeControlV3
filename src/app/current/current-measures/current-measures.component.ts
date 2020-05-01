@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ThemeService } from '../../services/theme.service';
+import { CurrentMeasuresService } from '../current-measures.service';
 
 @Component({
   selector: 'app-current-measures',
@@ -12,23 +13,37 @@ export class CurrentMeasuresComponent implements OnInit, OnDestroy {
   selectedTheme: string;
   selectedThemeSubscription: Subscription;
 
-  currentMeasuresConfig = [
-    { label: 'Luminosity', value: 'Sombre', icon: 'wb_sunny', color: 'warning' },
-    { label: 'Temperature', value: '24°C', icon: 'fireplace', color: 'danger' },
-    { label: 'Pressure', value: '1013,25hPa', icon: 'speed', color: 'secondary' },
-    { label: 'Humidity', value: '48%', icon: 'opacity', color: 'primary' },
-    { label: 'Movement', value: 'Oui', icon: 'pets', color: 'success' }
-  ];
+  currentMeasuresConfig = [];
+  currentMeasuresSubscription: Subscription;
 
-  constructor(private themeService: ThemeService) { }
+
+  constructor(
+    private themeService: ThemeService,
+    private currentMeasuresService: CurrentMeasuresService
+  ) { }
 
   ngOnInit(): void {
-    this.selectedThemeSubscription = this.themeService.selectedThemeSubject.subscribe(
+    this.selectedThemeSubscription = this.subscribeToSelectedTheme();
+    this.themeService.emitSelectedThemeSubject();
+
+    this.currentMeasuresSubscription = this.subscribeToCurrentMeasures();
+    this.currentMeasuresService.getCurrentMeasuresConfig();
+  }
+
+  subscribeToSelectedTheme(): Subscription {
+    return this.themeService.selectedThemeSubject.subscribe(
       (selectedTheme: string) => {
         this.selectedTheme = selectedTheme;
       }
     );
-    this.themeService.emitSelectedThemeSubject();
+  }
+
+  subscribeToCurrentMeasures(): Subscription {
+    return this.currentMeasuresService.currentMeasuresSubject.subscribe(
+      (currentMeasuresConfig: any[]) => {
+        this.currentMeasuresConfig = currentMeasuresConfig;
+      }
+    );
   }
 
   getTitleColor(): string {
@@ -45,6 +60,7 @@ export class CurrentMeasuresComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.selectedThemeSubscription.unsubscribe();
+    this.currentMeasuresSubscription.unsubscribe();
   }
 
 }

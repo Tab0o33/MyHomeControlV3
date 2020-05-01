@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { CurrentMeasuresComponent } from './current-measures/current-measures.component';
 import { MeasureComponent } from './measure/measure.component';
+import { CurrentMeasuresService } from './current-measures.service';
 
 @NgModule({
   imports: [
@@ -17,6 +18,8 @@ import { MeasureComponent } from './measure/measure.component';
   exports: [
     CurrentMeasuresComponent
   ],
-  providers: []
+  providers: [
+    CurrentMeasuresService
+  ]
 })
 export class CurrentMeasuresModule { }
