@@ -8,6 +8,14 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 
 import { ComponentModule } from './component.module';
 
+import { ThemeService } from './services/theme.service';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
+import { AlertModule } from 'ngx-bootstrap/alert';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,9 +25,15 @@ import { ComponentModule } from './component.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ComponentModule
+    ComponentModule,
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
+    AlertModule.forRoot()
+
   ],
-  providers: [],
+  providers: [
+    ThemeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

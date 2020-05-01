@@ -1,6 +1,19 @@
-<div class="toolbar d-flex align-items-center bg-primary text-white px-2">
+<div class="navbar d-flex align-items-center text-white px-2 border-bottom border-secondary" [ngClass]="getBGColor()">
 
     <div>MyHomeControl</div>
+
+    <div class="btn-group" dropdown>
+        <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle text-light" [ngClass]="getDDBColor()" 
+            aria-controls="dropdown-basic">
+            {{selectedTheme}} <span class="caret"></span>
+        </button>
+        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+            <li *ngFor="let theme of themes" role="menuitem" (click)="switchToTheme(theme.name)">
+                <span class="dropdown-item">{{theme.name}}</span>
+            </li>
+        </ul>
+    </div>
+
     <div class="ml-auto"><img class="avatar" src="../../assets/avatar-man.png" alt="user avatar"></div>
 
 </div>

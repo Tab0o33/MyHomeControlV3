@@ -1,8 +1,9 @@
 <div class="p-3">
-    <h2>Current measures</h2>
+    <h2 [ngClass]="getTitleColor()">Current measures</h2>
     <div class="row">
         <app-measure *ngFor="let currentMeasure of currentMeasuresConfig" [label]="currentMeasure.label"
-            [value]="currentMeasure.value" [icon]="currentMeasure.icon" [color]="currentMeasure.color">
+            [value]="currentMeasure.value" [icon]="currentMeasure.icon" [color]="currentMeasure.color"
+            [selectedTheme]="selectedTheme">
         </app-measure>
     </div>
 </div>
