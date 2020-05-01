@@ -1,0 +1,10 @@
+<div class="d-flex flex-row align-items-center measureBox bg-white m-2 rounded shadow">
+    <div class="align-self-stretch rounded-left p-1" [ngClass]="'bg-'+ color"></div>
+    <div class="d-flex flex-column ml-2 mr-3 measureBox-data">
+        <div class="font-weight-bold mb-1" [ngClass]="'text-'+ color">{{label}}</div>
+        <h5 class="font-weight-bold">{{value}}</h5>
+    </div>
+    <div class="ml-3 align-items-center mr-2">
+        <i class="material-icons md-dark md-inactive md-48 align-items-center "> {{icon}} </i>
+    </div>
+</div>

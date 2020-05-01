@@ -1,0 +1,11 @@
+@import "../styles.scss";
+
+.responsive-container{
+    width: calc(100vw - 50px);  
+    margin-left: 50px; 
+    transition: margin-left .25s, margin-right .25s, width .25s, flex .25s, -ms-flex .25s;
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+        width: calc(100vw - 200px);  
+        margin-left: 200px; 
+    }    
+}

@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SidebarComponent implements OnInit {
 
   config = [
-    {icon: 'speed', label: 'Current measures', link: 'currentMeasure'},
+    {icon: 'straighten', label: 'Current measures', link: 'currentMeasures'},
     {icon: 'show_chart', label: 'Analyzes', link: 'analyzes' }
   ];
 
