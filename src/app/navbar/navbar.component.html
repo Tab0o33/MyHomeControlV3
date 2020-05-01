@@ -1,9 +1,9 @@
-<div class="navbar d-flex align-items-center text-white px-2 border-bottom border-secondary" [ngClass]="getBGColor()">
+<div class="navbar d-flex align-items-center text-white px-2 border-bottom border-secondary" [ngClass]="'bg-' + getColor()">
 
     <div>MyHomeControl</div>
 
     <div class="btn-group" dropdown>
-        <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle text-light" [ngClass]="getDDBColor()" 
+        <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle text-light" [ngClass]="'btn-' +getColor()" 
             aria-controls="dropdown-basic">
             {{selectedTheme}} <span class="caret"></span>
         </button>

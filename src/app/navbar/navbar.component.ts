@@ -28,27 +28,15 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   }
 
-  getBGColor() {
+  getColor() {
     if (this.selectedTheme === 'classic') {
-      return 'bg-primary';
+      return 'primary';
     } else if (this.selectedTheme === 'dark') {
-      return 'bg-fullDark';
+      return 'fullDark';
     } else if (this.selectedTheme === 'ironman') {
-      return 'bg-dark';
+      return 'dark';
     } else {
-      return 'bg-primary';
-    }
-  }
-
-  getDDBColor() {
-    if (this.selectedTheme === 'classic') {
-      return 'btn-primary';
-    } else if (this.selectedTheme === 'dark') {
-      return 'btn-fullDark';
-    } else if (this.selectedTheme === 'ironman') {
-      return 'btn-dark';
-    } else {
-      return 'btn-primary';
+      return 'primary';
     }
   }
 

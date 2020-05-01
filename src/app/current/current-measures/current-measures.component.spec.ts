@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CurrentMeasuresComponent } from './current-measures.component';
+import { ThemeService } from 'src/app/services/theme.service';
+import { CurrentMeasuresService } from '../current-measures.service';
 
 describe('CurrentMeasuresComponent', () => {
   let component: CurrentMeasuresComponent;
@@ -8,9 +10,13 @@ describe('CurrentMeasuresComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CurrentMeasuresComponent ]
+      declarations: [CurrentMeasuresComponent],
+      providers: [
+        ThemeService,
+        CurrentMeasuresService
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
