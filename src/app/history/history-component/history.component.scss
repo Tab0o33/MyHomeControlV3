@@ -1,0 +1,33 @@
+.bg-blueIronMan{ background-color: rgba(255, 255, 255, 0.08); }
+.bg-darkBlue{ background-color: rgb(47, 52, 82); }
+
+.tab-container .nav-tabs{
+    border-style: none !important;
+    & .nav-link{
+        border-bottom: 1px solid #dee2e6;
+    }
+    & .nav-link.active{
+        border-bottom: none !important;
+    }
+}
+.darkBlue.nav-item { 
+
+    & .nav-link{ 
+        color: #f8f9fa !important; 
+    }
+
+    & .active{ 
+        background-color: rgb(47, 52, 82) !important; 
+    }
+}
+
+.blueIronMan.nav-item { 
+
+    & .nav-link{ 
+        color: #f8f9fa !important; 
+    }
+
+    & .active{ 
+        background-color: rgba(255, 255, 255, 0.0) !important; 
+    }
+}

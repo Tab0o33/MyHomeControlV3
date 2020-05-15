@@ -1,0 +1,13 @@
+<div class="w-100 p-3">
+    <canvas [hidden]="loading || errorAPI" id="historyCanvas">{{ historyChart }}</canvas>
+
+    <alert *ngIf="errorAPI && !loading" type="danger">
+        <strong>{{errorAPI}}</strong>
+    </alert>
+
+    <div *ngIf="loading" class="d-flex justify-content-center">
+        <div class="spinner-border" [ngClass]="getSpinnerColor()" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+</div>

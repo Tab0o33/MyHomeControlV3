@@ -2,7 +2,7 @@ import { Subject } from 'rxjs';
 
 export class ThemeService {
 
-    private selectedTheme = 'dark';
+    private selectedTheme = 'classic';
     selectedThemeSubject = new Subject<string>();
 
     themes = [

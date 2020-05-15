@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ThemeService } from './services/theme.service';
+import { NotificationService } from './services/notification.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,10 @@ export class AppComponent implements OnInit, OnDestroy {
   selectedTheme: string;
   selectedThemeSubscription: Subscription;
 
-  constructor(private themeService: ThemeService) { }
+  constructor(
+    private themeService: ThemeService,
+    public notificationService: NotificationService
+  ) { }
 
   ngOnInit(): void {
     this.selectedThemeSubscription = this.themeService.selectedThemeSubject.subscribe(

@@ -2,8 +2,11 @@
 
   <app-navbar></app-navbar>
   <app-sidebar></app-sidebar>
+
+  <toaster-container [toasterconfig]="notificationService.config"></toaster-container>
+
   <div class="responsive-container">
-      <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
   </div>
 
 </div>

@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-8 ">
+            <div class="border rounded m-3" [ngClass]="getBGColor()">
+                <tabset #historyTabs>
+                    <tab *ngFor="let measureType of measureTypeList" [heading]="measureType.label" [customClass]="getThemeTabClass()">
+                    </tab>
+                </tabset>
+                <app-chart-wrapper [measuresType]="getdisplayedMeasuresType()" [selectedTheme]="selectedTheme"></app-chart-wrapper>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <!-- <div class="border rounded m-3" [ngClass]="getBGColor()">
+                <app-history-data></app-history-data>
+            </div> -->
+        </div>
+    </div>
+</div>
